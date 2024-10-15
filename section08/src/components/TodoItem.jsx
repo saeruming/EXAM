@@ -8,8 +8,11 @@ const TodoItem = ({
   onUpdate,
   onDelete,
 }) => {
+  console.log("TotoItem 컴포넌트 실행");
+
   const onChangeCheckbox = () => {
     onUpdate(id);
+    console.log("체크박스: " + id);
   };
 
   const onClickDelete = () => {

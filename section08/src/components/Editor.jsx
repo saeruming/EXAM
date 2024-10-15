@@ -17,6 +17,7 @@ const Editor = ({ onCreate }) => {
   const onSubmit = () => {
     if (content === "") {
       contentRef.current.focus();
+      console.log("입력창 포커스 효과");
       return;
     }
     onCreate(content);
