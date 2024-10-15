@@ -1,3 +1,4 @@
+// 카운터 앱
 const Viewer = ({ count }) => {
   return (
     <div>
