@@ -1,5 +1,6 @@
 import "./TodoItem.css";
 
+// 젤 하위 컴포넌트
 const TodoItem = ({
   id,
   isDone,
