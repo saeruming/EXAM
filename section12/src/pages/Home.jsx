@@ -1,8 +1,9 @@
 import { useState, useContext } from "react";
-import { DiaryStateContext } from "../App";
+import { DiaryStateContext } from "../DiaryContext";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
+import usePageTitle from "../hooks/usePageTitle";
 
 const getMonthlyData = (pivotDate, data) => {
   //이번달의 시작시간
@@ -34,6 +35,7 @@ const Home = () => {
   const data = useContext(DiaryStateContext);
 
   const [pivotDate, setPivotDate] = useState(new Date());
+  usePageTitle("감정 일기장");
   const monthlyData = getMonthlyData(pivotDate, data);
   console.log(monthlyData);
 

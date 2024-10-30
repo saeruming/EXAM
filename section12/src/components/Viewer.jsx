@@ -2,10 +2,11 @@ import "./Viewer.css";
 import { getEmotionImage } from "../util/get-emotion-image";
 import { emotionList } from "../util/constants.js";
 
-const Viewer = (emotionId, content) => {
+const Viewer = ({ emotionId, content }) => {
   const emotionItem = emotionList.find(
     (item) => String(item.emotionId) === String(emotionId)
   );
+
   return (
     <div className="Viewer">
       <section className="img_section">

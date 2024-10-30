@@ -27,8 +27,6 @@ const Editor = ({ initData, onSubmit }) => {
   const onChangeInput = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-    console.log(name);
-    console.log(value);
 
     if (name === "createDate") {
       value = new Date(value); //value: 문자열로 된 날짜를 Date형태로 변환
@@ -55,6 +53,7 @@ const Editor = ({ initData, onSubmit }) => {
           type="date"
         />
       </section>
+
       <section className="emotion_section">
         <h4>오늘의 감정</h4>
         <div className="emotion_list_wrapper">
@@ -77,6 +76,7 @@ const Editor = ({ initData, onSubmit }) => {
           ))}
         </div>
       </section>
+
       <section className="content_section">
         <h4>오늘의 일기</h4>
         <textarea

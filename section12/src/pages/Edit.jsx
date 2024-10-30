@@ -3,18 +3,21 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 import Editor from "../components/Editor";
 import { useContext } from "react";
-import { DiaryDispatchContext } from "../App";
+import { DiaryDispatchContext } from "../DiaryContext";
 import useDiary from "../hooks/useDiary";
+import usePageTitle from "../hooks/usePageTitle";
 
 const Edit = () => {
   const editPrams = useParams();
 
   const nav = useNavigate();
+
   const { onDelete, onUpdate } = useContext(
     DiaryDispatchContext
   );
 
   const curDiaryItem = useDiary(editPrams.id);
+  usePageTitle(`${editPrams.id}번 일기 수정`);
 
   //삭제하기 버튼 눌렀을때 팝업
   const onClickDelete = () => {
@@ -37,6 +40,7 @@ const Edit = () => {
         input.emotionId,
         input.content
       );
+      console.log(editPrams.id);
       nav("/", { replace: true });
     }
   };
